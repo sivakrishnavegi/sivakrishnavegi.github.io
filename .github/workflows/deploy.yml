@@ -20,17 +20,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '23.6.0'  # Specify your Node.js version
+          node-version: '18.18.0'  # Ensure Node.js version is compatible with Next.js
 
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build and Export Static Files
-      - name: Build and Export Static Files
-        run: |
-          npm run build      # Builds the Next.js app
-          npm run export     # Exports the static files to the 'out' folder
+      # Step 4: Build the Next.js app
+      - name: Build the Next.js app
+        run: npm run build  # Builds the Next.js app (the export is handled automatically by Next.js)
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

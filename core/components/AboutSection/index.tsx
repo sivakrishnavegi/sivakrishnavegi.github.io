@@ -56,7 +56,7 @@ const Timeline = () => {
   ];
 
   return (
-    <section id="timeline" className="py-10 px-6 sm:px-10 md:px-20 lg:px-40 mx-auto text-white bg-[#010319]">
+    <section id="myJourney" className="py-10 px-6 sm:px-10 md:px-20 lg:px-40 mx-auto text-white bg-[#010319]">
       {/* Section Title */}
       <div className="text-center mb-6">
         <h2 className="text-3xl font-bold">My Journey 🚀</h2>

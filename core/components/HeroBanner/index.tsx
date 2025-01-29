@@ -11,7 +11,16 @@ const HeroBanner = () => {
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
+   
   };
+
+  const scrollToContactSection = () => {
+    const nextSection = document.getElementById("getInTouch");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }}
+
+
 
   return (
     <div id="home" className="min-h-screen pt-36 relative">
@@ -42,9 +51,9 @@ const HeroBanner = () => {
             <br />
             <strong>Let&apos;s build something amazing together!</strong> 🚀
             Feel free to{" "}
-            <a href="#contact" className="text-blue-500 hover:underline">
+            <button onClick={scrollToContactSection} className="text-blue-500 hover:underline">
               get in touch
-            </a>{" "}
+            </button>{" "}
             and explore what we can create.
           </p>
 

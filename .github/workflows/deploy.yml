@@ -1,0 +1,45 @@
+name: Deploy Resume to GitHub Pages
+
+on:
+  push:
+    branches:
+      - resume  # Trigger the workflow when there is a push to the 'resume' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the 'resume' branch
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: resume  # Make sure it's the correct branch
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Specify your Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build and Export Static Files
+      - name: Build and Export Static Files
+        run: |
+          npm run build      # Builds the Next.js app
+          npm run export     # Exports the static files to the 'out' folder
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub token for authentication
+          publish_dir: ./out  # Path to the 'out' directory containing the static files
+          destination_dir: /  # Publish the contents directly to the root of the GitHub Pages branch (gh-pages)
+
+      # Optional: Clean up
+      - name: Clean up workspace
+        run: rm -rf ./out  # Remove the 'out' directory after deployment

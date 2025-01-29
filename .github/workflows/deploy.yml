@@ -12,15 +12,15 @@ jobs:
     steps:
       # Step 1: Checkout the 'resume' branch
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          ref: resume  # Make sure it's the correct branch
+          ref: resume  # Ensure it's the correct branch
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18.18.0'  # Ensure Node.js version is compatible with Next.js
+          node-version: '18.18.0'  # Ensure compatibility with Next.js
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -28,15 +28,16 @@ jobs:
 
       # Step 4: Build the Next.js app
       - name: Build the Next.js app
-        run: npm run build  # Builds the Next.js app (the export is handled automatically by Next.js)
+        run: npm run build  # Builds the Next.js app
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub token for authentication
+          personal_token: ${{ secrets.GH_PAT }}  # Use the Personal Access Token (PAT)
+          publish_branch: gh-pages  # Deploy to GitHub Pages branch
           publish_dir: ./out  # Path to the 'out' directory containing the static files
-          destination_dir: /  # Publish the contents directly to the root of the GitHub Pages branch (gh-pages)
+          external_repository: sivakrishnavegi/sivakrishnavegi.github.io
 
       # Optional: Clean up
       - name: Clean up workspace

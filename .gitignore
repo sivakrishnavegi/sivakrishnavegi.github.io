@@ -11,9 +11,7 @@
 
 # next.js
 /.next/
-/dist/
 # production
-/build
 
 # misc
 .DS_Store

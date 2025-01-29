@@ -1,8 +1,12 @@
+
 export const navItems = [
+  { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
-    { name: "Projects", link: "#projects" },
+    { name: "My Journey", link: "#myJourney" },
+    { name: "Tech Stack", link: "#myTechStack" },
+    { name: "Projects", link: "#myProjects" },
     { name: "Testimonials", link: "#testimonials" },
-    { name: "Contact", link: "#contact" },
+    { name: "Contact", link: "#getInTouch" },
   ];
   
   export const gridItems = [
@@ -213,5 +217,62 @@ export const navItems = [
     {
       id: 3,
       img: "/link.svg",
+    },
+  ];
+
+  export const timelineData = [
+    {
+      id: 1,
+      date: "2015",
+      title: "XII (State Board)",
+      subtitle: "Sri Chaitanya, Visakhapatnam",
+      details: "85%",
+      description: "Focused on science and mathematics.",
+      icon: 'FaGraduationCap',
+    },
+    {
+      id: 2,
+      date: "2018",
+      title: "BCA (Bachelor of Computer Applications)",
+      subtitle: "Lovely Professional University",
+      details: "CGPA: 8.5/10",
+      description: "Strong foundation in coding and software development.",
+      icon: 'FaGraduationCap',
+    },
+    {
+      id: 3,
+      date: "2020",
+      title: "MCA (Master of Computer Applications)",
+      subtitle: "Lovely Professional University",
+      details: "CGPA: 8.2/10",
+      description: "Mastered advanced programming concepts.",
+      icon: 'FaGraduationCap',
+    },
+    {
+      id: 4,
+      date: "Jan 2020 - Aug 2020",
+      title: "Intern Full Stack Developer",
+      subtitle: "Click Labs Pvt Ltd",
+      details: "React JS, MongoDB, Node.js, Express.js",
+      description: "Hands-on experience in full-stack development.",
+      icon: 'FaBriefcase',
+    },
+    {
+      id: 5,
+      date: "Nov 2021 - Jan 2024",
+      title: "MERN Stack Developer",
+      subtitle: "Destm Technologies",
+      details: "MongoDB, Express.js, React JS, Node.js",
+      description: "Developed full-stack applications and APIs using the MERN stack.",
+      icon: 'FaBriefcase',
+    },
+    {
+      id: 6,
+      date: "Feb 2024 - Present",
+      title: "Freelance Full Stack Developer",
+      subtitle: "Self-Employed",
+      details: "React JS, MongoDB, Next.js, Express.js, MERN Stack",
+      description: "Working on freelance projects involving full-stack development, building web applications, and APIs.",
+      icon: 'FaBriefcase',
     },
   ];

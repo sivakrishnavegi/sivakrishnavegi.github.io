@@ -1,8 +1,13 @@
+import About from "@/core/components/About";
+import AboutSection from "@/core/components/AboutSection";
+import ContactUs from "@/core/components/Contactus";
 import HeroBanner from "@/core/components/HeroBanner";
+import MyProjects from "@/core/components/MyProjects";
+import MyTechSTack from "@/core/components/MyTechStack";
+import Testimonials from "@/core/components/Testmonials";
 import { FloatingNav } from "@/core/components/ui/FloatingNavbar";
 import HomePageLayout from "@/core/layout/homepage";
 import { navItems } from "@/data";
-import React from "react";
 
 const HomePageContainer = () => {
   return (
@@ -14,6 +19,14 @@ const HomePageContainer = () => {
             <HeroBanner />
           </div>
         </div>
+          <div >
+            <About />
+            <AboutSection />
+            <MyTechSTack />
+            <MyProjects />
+            <Testimonials />
+            <ContactUs />
+          </div>
       </HomePageLayout>
     </div>
   );

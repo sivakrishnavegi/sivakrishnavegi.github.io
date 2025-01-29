@@ -1,40 +1,25 @@
-import React from "react";
-import { Spotlight } from "../ui/Spotlight";
+"use client"
+
+import { Button } from "@/components/ui/button";
 import { TextGenerateEffect } from "../ui/TextGenerateEffect";
-import MagicButton from "../ui/ButtonMagic";
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaChevronDown } from "react-icons/fa"; // Importing the down arrow icon
 
 const HeroBanner = () => {
-  return (
-    <div className="pb-20 pt-36">
-      {/**
-       *  UI: Spotlights
-       *  Link: https://ui.aceternity.com/components/spotlight
-       */}
-      <div>
-        <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="white"
-        />
-        <Spotlight
-          className="h-[80vh] w-[50vw] top-10 left-full"
-          fill="purple"
-        />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
-      </div>
+  // Smooth scroll function
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById("myJourney");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-      {/**
-       *  UI: grid
-       *  change bg color to bg-black-100 and reduce grid color from
-       *  0.2 to 0.03
-       */}
+  return (
+    <div id="home" className="min-h-screen pt-36 relative">
       <div
         className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
      absolute top-0 left-0 flex items-center justify-center"
       >
-        {/* Radial gradient for the container to give a faded look */}
         <div
-          // chnage the bg to bg-black-100, so it matches the bg color and will blend in
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
        bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
@@ -43,30 +28,54 @@ const HeroBanner = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            patience is a key 
+            Good things take time
           </p>
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
           <TextGenerateEffect
-            words="Transforming your ideas into Reality"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Transform your ideas into reality and rise like a phoenix 🔥"
+            className="text-center text-[40px] md:text-5xl"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Shiva, a MERN Stack Developer based in Vizag.
+          <p className="text-center md:tracking-wider font-thin mb-4 text-sm md:text-lg lg:text-xl">
+            Hey there! 👋 I&apos;m Shiva, a passionate MERN Stack Developer
+            based in Vizag.
+            <br />
+            <strong>Let&apos;s build something amazing together!</strong> 🚀
+            Feel free to{" "}
+            <a href="#contact" className="text-blue-500 hover:underline">
+              get in touch
+            </a>{" "}
+            and explore what we can create.
           </p>
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>     
+
+          {/* Button Container */}
+          <div className="flex space-x-4">
+            <a href="#projects">
+              <Button
+                variant={"outline"}
+                className="text-blue-500 border-2 border-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-500 hover:text-white transition duration-300"
+              >
+                Projects
+              </Button>
+            </a>
+            <a href="#download-cv">
+              <Button
+                variant={"outline"}
+                className="text-green-500 border-2 border-green-500 px-6 py-3 rounded-md shadow-md hover:bg-green-500 hover:text-white transition duration-300"
+              >
+                Download CV
+              </Button>
+            </a>
+          </div>
         </div>
+      </div>
+
+      {/* Animated Down Arrow */}
+      <div
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+        onClick={scrollToNextSection}
+      >
+        <FaChevronDown className="text-blue-500 text-3xl" />
       </div>
     </div>
   );

@@ -30,12 +30,13 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
+          const isLastWord = idx === wordsArray.length - 1; // Check if it's the last word
           return (
             <motion.span
               key={word + idx}
-              // change here if idx is greater than 3, change the text color to #CBACF9
-              className={` ${idx > 3 ? "text-purple" : "dark:text-white text-black"
-                } opacity-0`}
+              className={`${
+                idx > 8 ? "text-amber-500" : "dark:text-white text-black"
+              } opacity-0 ${isLastWord ? "uppercase font-bold" : ""}`}
             >
               {word}{" "}
             </motion.span>

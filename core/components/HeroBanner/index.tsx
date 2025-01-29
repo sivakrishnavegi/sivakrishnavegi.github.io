@@ -64,7 +64,6 @@ const HeroBanner = () => {
 
           {/* Button Container */}
           <div className="flex space-x-4">
-            <a href="#projects">
               <Button
                 onClick={scrollToProjectsSection}
                 variant={"outline"}
@@ -72,7 +71,6 @@ const HeroBanner = () => {
               >
                 Projects
               </Button>
-            </a>
             <a href="#download-cv">
               <Button
                 variant={"outline"}

@@ -20,6 +20,7 @@ const HeroBanner = () => {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }}
 
+    //data
 
 
   return (

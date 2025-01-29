@@ -21,7 +21,11 @@ const HeroBanner = () => {
     }}
 
     //data new snm
-
+    const scrollToProjectsSection = () => {
+      const nextSection = document.getElementById("projects");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }}
 
   return (
     <div id="home" className="min-h-screen pt-36 relative">
@@ -62,6 +66,7 @@ const HeroBanner = () => {
           <div className="flex space-x-4">
             <a href="#projects">
               <Button
+                onClick={scrollToProjectsSection}
                 variant={"outline"}
                 className="text-blue-500 border-2 border-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-500 hover:text-white transition duration-300"
               >

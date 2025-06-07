@@ -11,6 +11,7 @@ const nextConfig = {
   //   distDir: 'dist',
   images: {
     domains: ["via.placeholder.com"],
+     unoptimized: true  ,
   },
 };
 
